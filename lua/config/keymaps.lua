@@ -3,10 +3,7 @@ vim.keymap.set("n", "gl", function()
 	vim.diagnostics.open_float()
 end, { desc = "Open Diag in Float" })
 
-vim.keymap.set("n", "<leader>tn", "<cmd>bn<CR>", { desc = "next buffer" })
-
-vim.keymap.set("n", "<leader>tp", "<cmd>bp<CR>", { desc = "previous buffer" })
-
+vim.keymap.set("n", "<leader>Y", "gg0VG$y", { desc = "Yank entire file" })
 vim.keymap.set("i", "<C-h>", "<Left>", { noremap = true, silent = true, desc = "Move Left (Insert Mode)" })
 vim.keymap.set("i", "<C-j>", "<Down>", { noremap = true, silent = true, desc = "Move Down (Insert Mode)" })
 vim.keymap.set("i", "<C-k>", "<Up>", { noremap = true, silent = true, desc = "Move Up (Insert Mode)" })
@@ -36,38 +33,6 @@ map("n", "<A-8>", "<Cmd>BufferGoto 8<CR>", opts)
 map("n", "<A-9>", "<Cmd>BufferGoto 9<CR>", opts)
 map("n", "<A-0>", "<Cmd>BufferLast<CR>", opts)
 
--- Pin/unpin buffer
-map("n", "<A-p>", "<Cmd>BufferPin<CR>", opts)
-
--- Goto pinned/unpinned buffer
---                 :BufferGotoPinned
---                 :BufferGotoUnpinned
-
 -- Close buffer
 map("n", "<A-c>", "<Cmd>BufferClose<CR>", opts)
 map("n", "<A-C>", "<Cmd>BufferCloseAllButCurrent<CR>", opts)
-
--- Wipeout buffer
---                 :BufferWipeout
-
--- Close commands
---                 :BufferCloseAllButCurrent
---                 :BufferCloseAllButPinned
---                 :BufferCloseAllButCurrentOrPinned
---                 :BufferCloseBuffersLeft
---                 :BufferCloseBuffersRight
-
--- Magic buffer-picking mode
-map("n", "<C-p>", "<Cmd>BufferPick<CR>", opts)
-map("n", "<C-s-p>", "<Cmd>BufferPickDelete<CR>", opts)
-
--- Sort automatically by...
-map("n", "<Space>bb", "<Cmd>BufferOrderByBufferNumber<CR>", opts)
-map("n", "<Space>bn", "<Cmd>BufferOrderByName<CR>", opts)
-map("n", "<Space>bd", "<Cmd>BufferOrderByDirectory<CR>", opts)
-map("n", "<Space>bl", "<Cmd>BufferOrderByLanguage<CR>", opts)
-map("n", "<Space>bw", "<Cmd>BufferOrderByWindowNumber<CR>", opts)
-
--- Other:
--- :BarbarEnable - enables barbar (enabled by default)
--- :BarbarDisable - very bad command, should never be used
