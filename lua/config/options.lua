@@ -10,6 +10,7 @@ vim.opt.breakindent = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
+vim.opt.pumblend = 0
 
 --always show signcolumn
 vim.opt.signcolumn = "yes"
